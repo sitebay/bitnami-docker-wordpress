@@ -71,7 +71,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     WORDPRESS_SKIP_INSTALL="no" \
     WORDPRESS_TABLE_PREFIX="wp_" \
     WORDPRESS_USERNAME="user"
-
+RUN rm -rf /opt/bitnami/wordpress/wp-content/plugins/*
 EXPOSE 8080 8443
 
 USER 1001
