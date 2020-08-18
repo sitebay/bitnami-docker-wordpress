@@ -16,6 +16,8 @@ empty_password_enabled_warn() {
     warn "You set the environment variable ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD}. For safety reasons, do not use this flag in a production environment."
 }
 
+rm -rf /opt/bitnami/wordpress/wp-content/plugins/*
+
 # Validate passwords
 if [[ "$ALLOW_EMPTY_PASSWORD" =~ ^(yes|Yes|YES)$ ]]; then
     empty_password_enabled_warn
