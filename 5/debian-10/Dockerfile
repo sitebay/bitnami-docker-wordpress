@@ -75,5 +75,7 @@ RUN rm -rf /opt/bitnami/wordpress/wp-content/plugins/*
 EXPOSE 8080 8443
 
 USER 1001
+RUN rm -rf /opt/bitnami/wordpress/wp-content/plugins/*
+RUN ls /opt/bitnami/wordpress/wp-content/plugins/
 ENTRYPOINT [ "/app-entrypoint.sh" ]
 CMD [ "httpd", "-f", "/opt/bitnami/apache/conf/httpd.conf", "-DFOREGROUND" ]
