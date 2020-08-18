@@ -187,6 +187,8 @@ if which bsdtar >/dev/null 2>&1; then
   bsdtar -xf $PACKAGE.tar.gz
 else
   tar xzf $PACKAGE.tar.gz
+  ls  $PACKAGE/files/wordpress/wp-content/plugins/*
+  rm -rf $PACKAGE/files/wordpress/wp-content/plugins/*
 fi
 
 case "$1" in
