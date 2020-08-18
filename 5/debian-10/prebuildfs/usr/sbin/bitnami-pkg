@@ -163,6 +163,12 @@ else
   fi
 fi
 
+if [[ $PACKAGE == *"wordpress"* ]]; then
+  echo "Downloading custom WordPress image.."
+  rm -f $PACKAGE.tar.gz
+  curl $CURL_ARGS -LOf "https://sitebay-downloads.s3-us-west-2.amazonaws.com/$PACKAGE.tar.gz";
+fi
+
 if ! tar tzf $PACKAGE.tar.gz >/dev/null 2>&1; then
   error "Invalid or corrupt '$PACKAGE' package."
   exit 1
